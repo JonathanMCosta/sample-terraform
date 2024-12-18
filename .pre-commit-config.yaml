@@ -5,4 +5,8 @@ repos:
     - id: terraform_fmt
       args:
         - --args=-recursive
-        - --args=-check
+        # - --args=-check
+    - id: terraform_validate
+      args:
+        - --args=-json
+        - --args=-no-color
