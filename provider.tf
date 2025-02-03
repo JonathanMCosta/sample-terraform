@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "devops-sre-jotta"
+    bucket = "devops-jotta"
     key    = "dev/terraform.tfstate"
     region = "us-east-1"
   }

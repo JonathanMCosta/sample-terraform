@@ -3,15 +3,12 @@ resource "aws_eks_cluster" "eks_cluster" {
   role_arn = aws_iam_role.eks_cluster_role.arn
 
   vpc_config {
-    subnet_ids = [
-      var.public_subnet_1a,
-      var.public_subnet_1b,
-    ]
+    subnet_ids              = var.cluster_subnet_ids
     endpoint_private_access = true
     endpoint_public_access  = true
   }
 
-  version = "1.31"
+  version = var.cluster_version
 
   # access_config {
   #   authentication_mode = "API"
